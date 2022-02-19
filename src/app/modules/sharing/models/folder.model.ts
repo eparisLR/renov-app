@@ -1,4 +1,4 @@
-export interface Project {
+export class Folder {
     id: number;
     folder_num: string;
     id_customer: number;
