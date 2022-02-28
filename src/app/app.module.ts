@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {ConseillersModule} from "./modules/conseiller/conseillers.module";
-import {ProjectsRestAPIService} from "./services/projects-rest.service";
+import {FoldersRestAPIService} from "./services/folders-rest.service";
 import {ConfigService} from "./services/config.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Overlay} from "@angular/cdk/overlay";
+import { FlexModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {Overlay} from "@angular/cdk/overlay";
     ConseillersModule,
     HttpClientModule
   ],
-  providers: [ProjectsRestAPIService,
+  providers: [
+  FoldersRestAPIService,
   ConfigService,
   MatSnackBar,
   Overlay],

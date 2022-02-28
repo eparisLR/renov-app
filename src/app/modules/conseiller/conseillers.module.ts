@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FoldersListComponent } from './components/projects-list/folders-list.component';
+import { FoldersListComponent } from './components/folders-list/folders-list.component';
 import { ConseillersRoutingModule } from './conseillers-routing.module';
-import { ProjectsService } from './services/projects.service';
+import { FoldersService } from './services/folders.service';
 import {ConseillerHomeComponent} from "./components/conseiller-home/conseiller-home.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
@@ -10,11 +10,19 @@ import {ConseillerLayoutComponent} from "./components/conseiller-layout/conseill
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import { MatCardModule} from "@angular/material/card"
+import { FoldersFormComponent } from './components/folders-form/folders-form.component';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FlexModule } from '@angular/flex-layout';
 
 
 
 @NgModule({
-  declarations: [FoldersListComponent, ConseillerHomeComponent, ConseillerLayoutComponent],
+  declarations: [
+    FoldersListComponent,
+    FoldersFormComponent,
+    ConseillerHomeComponent,
+    ConseillerLayoutComponent],
     imports: [
         CommonModule,
         ConseillersRoutingModule,
@@ -22,10 +30,14 @@ import {MatButtonModule} from "@angular/material/button";
         MatInputModule,
         MatPaginatorModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        MatCardModule,
+        FlexModule,
+        ReactiveFormsModule
     ],
   providers: [
-    ProjectsService
+    FoldersService,
+    FormBuilder
   ]
 })
 export class ConseillersModule { }
